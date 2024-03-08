@@ -1,4 +1,4 @@
-FROM python:latests
+FROM python:3.12.1
 
 WORKDIR /app
 
@@ -8,6 +8,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 5000
 
-ENV DATABASE_URI="sqlite:///iftachDB.db"
-
-CMD ["python", "app.py"]
+CMD ["python", "app.py","--host=0.0.0.0", "--port=5000"]

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sumexe
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sumexe
+  template:
+    metadata:
+      labels:
+        app: sumexe
+    spec:
+      containers:
+        - name: sumexe-con
+          image: iftachbt/sumimage:latest
+          ports:
+          - containerPort: 5000
