@@ -51,6 +51,7 @@ pipeline {
           steps {
             sh 'docker rmi sumimage'
             sh 'ls'
+            sh 'pwd'
           }
         }
 
