@@ -1,22 +1,10 @@
 pipeline {
   agent any
   stages {
-    stage('asd') {
-      parallel {
-        stage('delete pre image') {
-          steps {
-            sh '''docker rmi sumimage
+    stage('build image') {
+      steps {
+        sh '''docker build -t sumimage .
 '''
-          }
-        }
-
-        stage('build image') {
-          steps {
-            sh '''docker build -t sumimage .
-'''
-          }
-        }
-
       }
     }
 
