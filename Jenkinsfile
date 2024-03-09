@@ -45,17 +45,13 @@ pipeline {
 
         stage('deployment') {
           steps {
-            sh '''kubectl apply -f sumexe-deployment.yaml
---validate=false
-'''
+            sh 'kubectl apply -f sumexe-deployment.yaml --validate=false'
           }
         }
 
         stage('service') {
           steps {
-            sh '''kubectl apply -f sumexe-service.yaml
---validate=false
-'''
+            sh 'kubectl apply -f sumexe-service.yaml --validate=false'
           }
         }
 
